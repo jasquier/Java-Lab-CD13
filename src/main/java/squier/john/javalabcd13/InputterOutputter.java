@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class InputterOutputter {
 
     private Scanner scanner = new Scanner(System.in);
-    public int guess = -1;
 
     public void displayHeader() {
         System.out.println("\nWelcome to the SECRET GUESSING GAME!!!!\n");
