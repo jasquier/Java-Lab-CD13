@@ -7,7 +7,7 @@ import java.util.Scanner;
  */
 public class InputterOutputter {
 
-    Scanner scanner = new Scanner(System.in;)
+    Scanner scanner = new Scanner(System.in);
 
     public void displayHeader() {
         System.out.println("\nWelcome to the SECRET GUESSING GAME!!!!\n");
@@ -16,11 +16,12 @@ public class InputterOutputter {
     }
 
     public int promptForGuess() {
-
+        System.out.print("Enter a guess between 1 and 10: ");
+        return scanner.nextInt();
     }
 
     public void printSuccessMessage(int secretNumber) {
-
+        System.out.printf("You're the BEST!!!  You guessed the secret number %d\n", secretNumber);
     }
 
 }
