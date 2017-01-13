@@ -5,21 +5,33 @@ package squier.john.javalabcd13;
  */
 public class GuessingGame {
 
-    InputterOutputter inputOutput = new InputterOutputter();
-    int secretNumber = SecertNumberGenerator.generateSecretNumber();
+    private InputterOutputter io = new InputterOutputter();
+    private int secretNumber = SecertNumberGenerator.generateSecretNumber();
+
 
     public void gameLoop() {
 
-        int guess = -1;
+        int guess = -1, previousGuess = -1;
+        int numberOfGuesses = 0;
+
+        io.displayHeader();
 
         while ( guess != secretNumber ) {
 
+            do {
+                guess = io.promptForGuess();
+
+                if (guess < secretNumber) {
+                    io.printGuessTooLowMessage();
+                } else if (guess > secretNumber) {
+                    io.printGuessTooHighMessage();
+                }
+            } while ( guess == previousGuess );
+
+            previousGuess = guess;
+            numberOfGuesses++;
         }
+
+        io.printSuccessMessage(secretNumber, numberOfGuesses);
     }
-
-    public void checkGuess(int guess) {
-
-    }
-
-
 }

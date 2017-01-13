@@ -6,12 +6,9 @@ package squier.john.javalabcd13;
 public class Main {
 
     public static void main(String[] args) {
-        InputterOutputter inputOutput = new InputterOutputter();
+        GuessingGame guessingGame = new GuessingGame();
 
-        int secretNumber = SecertNumberGenerator.generateSecretNumber();
-
-        inputOutput.displayHeader();
-
-        inputOutput.promptForGuess();
+        guessingGame.gameLoop();
     }
+
 }

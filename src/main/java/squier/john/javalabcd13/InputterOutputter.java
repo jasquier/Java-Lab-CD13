@@ -7,7 +7,8 @@ import java.util.Scanner;
  */
 public class InputterOutputter {
 
-    Scanner scanner = new Scanner(System.in);
+    private Scanner scanner = new Scanner(System.in);
+    public int guess = -1;
 
     public void displayHeader() {
         System.out.println("\nWelcome to the SECRET GUESSING GAME!!!!\n");
@@ -20,8 +21,17 @@ public class InputterOutputter {
         return scanner.nextInt();
     }
 
-    public void printSuccessMessage(int secretNumber) {
-        System.out.printf("You're the BEST!!!  You guessed the secret number %d\n", secretNumber);
+    public void printSuccessMessage(int secretNumber, int numberOfGuesses) {
+        System.out.printf("You're the BEST!!!  You guessed the secret number %d in %d tries\n",
+                secretNumber, numberOfGuesses);
+    }
+
+    public void printGuessTooLowMessage() {
+        System.out.println("Your guess is LOWER than the secret number");
+    }
+
+    public void printGuessTooHighMessage() {
+        System.out.println("Your guess is HIGHER than the secret number");
     }
 
 }
